@@ -1,32 +1,55 @@
 <template>
     <div class="container hospital-nearby my-4">
-        <HeadingContent 
-            subTitle="Melinda Hospital Articles"
-            title="Latest News"
-            no_text
-        />        
+        <div class="text-center mb-5">
+            <h2>News & Articles</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <div class="border-red mx-auto"></div>
+        </div>
         <div class="row">
-            <div class="col-sm-4" v-for="article in articles" v-bind:key="article.id">
-                <div class="card card-article">
-                    <img v-bind:src="article.imgSrc" class="room-img card-img-top" alt="hotel-image">
-                    <div class="card-body card-article-body" style="margin-top: -78px;">
-                        <span class="badge bg-primary">{{article.tags}}</span>
-                        <h5 class="card-title">
-                            <!-- <a href="article-detail/">{{article.title}}</a> -->
-                            <router-link :to="{ name: 'artikel', params: { id: article.id } }" >{{article.title}}</router-link>
-                        </h5>
-                        <span class="text-light">{{article.date}}</span>
+            <div class="col-sm-6">
+                <div class="col-sm-12" v-for="article in articles.slice(0,2)" v-bind:key="article.id">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img v-bind:src="article.imgSrc" class="img-fluid rounded-start" alt="articles">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <span class="badge bg-primary">{{article.tags}}</span>
+                                    <h5 class="card-title">
+                                        <!-- <a href="article-detail/">{{article.title}}</a> -->
+                                        <router-link :to="{ name: 'artikel', params: { id: article.id } }" >{{article.title}}</router-link>
+                                    </h5>
+                                    <span class="text-light">{{article.date}}</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>   
+            <div class="col-sm-6 align-self-stretch">
+                <div class="col-sm-12" v-for="article in articles.slice(2)" v-bind:key="article.id">
+                    <div class="card bg-dark text-white">
+                        <img v-bind:src="article.imgSrc" class="card-img" alt="article">
+                        <div class="card-img-overlay">
+                            <span class="badge bg-primary">{{article.tags}}</span>
+                            <h5 class="card-title">
+                                <!-- <a href="article-detail/">{{article.title}}</a> -->
+                                <router-link :to="{ name: 'artikel', params: { id: article.id } }" >{{article.title}}</router-link>
+                            </h5>
+                            <span class="text-light">{{article.date}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </div>
 </template>
 
 <script>
-    import HeadingContent from "@/components/utils/HeadingContent.vue"    
     export default {
-        components: { HeadingContent },
         data() {
             return {
                 articles: [
@@ -76,6 +99,10 @@
 </script>
 
 <style>
+    .border-red {
+        border-bottom: 4px solid #CD4051;
+        width: 60px;        
+    }
     .card-article {
         position: relative;
     }

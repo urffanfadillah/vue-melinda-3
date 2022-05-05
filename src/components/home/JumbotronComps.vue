@@ -1,140 +1,135 @@
 <script>
-    
+    import HeadingContent from "@/components/utils/HeadingContent.vue"
+    export default {
+        components: {
+            HeadingContent
+        },
+        data() {
+            return {
+                filterSpecialist: 'Semua',
+                search: '',          
+                doctors: [                                        
+                    {
+                        specialist: "Dokter Spesialis Kandungan",
+                        dataDoctor: [
+                            { id: 1, name:"dr. Susan Melinda, Sp. OG", imgUrl: "https://dummyimage.com/600x400/000/fff" },
+                            { id: 2, name:"Dr. dr. H. Rono.S.H, Sp.OG(K), MM", imgUrl: "https://dummyimage.com/600x400/000/fff" },
+                            { id: 3, name:"dr. Julius T. Pangayoman, Sp.OG", imgUrl: "https://dummyimage.com/600x400/000/fff" },
+                            { id: 4, name:"Prof. Dr. dr. Vita M T, Sp.OG, SH, M.Kes, AIFO", imgUrl: "https://dummyimage.com/600x400/000/fff" },
+                            { id: 5, name:"John Doe", imgUrl: "https://dummyimage.com/600x400/000/fff" }
+                        ]
+                    },
+                    {
+                        specialist: "Dokter Spesialis Bedah",
+                        dataDoctor: [
+                            { id: 6, name:"dr. Dradjat R. Suardi, SpB(K)-Onk, FICS", imgUrl: "https://dummyimage.com/600x400/000/fff" },
+                            { id: 7, name:"dr. Concepcion Garcia, Sp.B", imgUrl: "https://dummyimage.com/600x400/000/fff" },
+                            { id: 8, name:"dr. Johanes Casay Chandrawinata, MND, SpGK", imgUrl: "https://dummyimage.com/600x400/000/fff" },
+                            { id: 9, name:"John Doe", imgUrl: "https://dummyimage.com/600x400/000/fff" }
+                        ]
+                    },
+                    {
+                        specialist: "Dokter Spesialis Anak",
+                        dataDoctor: [
+                            { id: 10, name:"dr. Tetty Yuniati, Sp.A(K), M.Kes", imgUrl: "https://dummyimage.com/600x400/000/fff" },
+                            { id: 11, name:"dr. Yulia Suryakusuma, Sp.A, M.Kes", imgUrl: "https://dummyimage.com/600x400/000/fff" }
+                        ]
+                    },
+                ],             
+            }
+        },
+    }
 </script>
 
 <template>
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="https://dummyimage.com/1000x400/000/fff" class="d-block w-100" alt="https://dummyimage.com/1000x400/000/fff">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5 class="text-start">Patients Blogs</h5>
-                    <h1 class="fs-3 fw-bold text-start">You're invited to Cervical Cancer Awareness</h1>
-                    <p class="fw-light text-start text-white">
-                        Gejala kanker serviks stadium awal jarang sekali terlihat, bahkan mungkin tidak menimbulkan gejala sama sekali hingga sel kanker menyebar ke jaringan di sekitarnya.
-                    </p>
-                    <div class="d-flex">
-                        <button type="button" class="rounded-pill btn btn-primary mr-auto btn-readmore">Read More</button>
-                    </div>
-                </div>
-                <div class="container d-md-none blog-carousel py-5">
-                    <h5 class="text-start text-white">Patients Blogs</h5>
-                    <h1 class="fs-3 fw-bold text-start text-white">You're invited to Cervical Cancer Awareness</h1>
-                    <p class="fw-light text-start text-white">
-                        Gejala kanker serviks stadium awal jarang sekali terlihat, bahkan mungkin tidak menimbulkan gejala sama sekali hingga sel kanker menyebar ke jaringan di sekitarnya.
-                    </p>
-                    <div class="d-flex">
-                        <button type="button" class="rounded-pill btn btn-primary mr-auto btn-readmore">Read More</button>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="https://dummyimage.com/1000x400/000/fff" class="d-block w-100" alt="https://dummyimage.com/1000x400/000/fff">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5 class="text-start">Patients Blogs</h5>
-                    <h1 class="fs-3 fw-bold text-start">You're invited to Cervical Cancer Awareness</h1>
-                    <p class="fw-light text-start text-white">
-                        Gejala kanker serviks stadium awal jarang sekali terlihat, bahkan mungkin tidak menimbulkan gejala sama sekali hingga sel kanker menyebar ke jaringan di sekitarnya.
-                    </p>
-                    <div class="d-flex">
-                        <button type="button" class="rounded-pill btn btn-primary mr-auto btn-readmore">Read More</button>
-                    </div>
-                </div>
-                <div class="container d-md-none blog-carousel py-5">
-                    <h5 class="text-start text-white">Patients Blogs</h5>
-                    <h1 class="fs-3 fw-bold text-start text-white">You're invited to Cervical Cancer Awareness</h1>
-                    <p class="fw-light text-start text-white">
-                        Gejala kanker serviks stadium awal jarang sekali terlihat, bahkan mungkin tidak menimbulkan gejala sama sekali hingga sel kanker menyebar ke jaringan di sekitarnya.
-                    </p>
-                    <div class="d-flex">
-                        <button type="button" class="rounded-pill btn btn-primary mr-auto btn-readmore">Read More</button>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="https://dummyimage.com/1000x400/000/fff" class="d-block w-100" alt="https://dummyimage.com/1000x400/000/fff">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5 class="text-start">Patients Blogs</h5>
-                    <h1 class="fs-3 fw-bold text-start">You're invited to Cervical Cancer Awareness</h1>
-                    <p class="fw-light text-start text-white">
-                        Gejala kanker serviks stadium awal jarang sekali terlihat, bahkan mungkin tidak menimbulkan gejala sama sekali hingga sel kanker menyebar ke jaringan di sekitarnya.
-                    </p>
-                    <div class="d-flex">
-                        <button type="button" class="rounded-pill btn btn-primary mr-auto btn-readmore">Read More</button>
-                    </div>
-                </div>
-                <div class="container d-md-none blog-carousel py-5">
-                    <h5 class="text-start text-white">Patients Blogs</h5>
-                    <h1 class="fs-3 fw-bold text-start text-white">You're invited to Cervical Cancer Awareness</h1>
-                    <p class="fw-light text-start text-white">
-                        Gejala kanker serviks stadium awal jarang sekali terlihat, bahkan mungkin tidak menimbulkan gejala sama sekali hingga sel kanker menyebar ke jaringan di sekitarnya.
-                    </p>
-                    <div class="d-flex">
-                        <button type="button" class="rounded-pill btn btn-primary mr-auto btn-readmore">Read More</button>
-                    </div>
-                </div>
-            </div>
+    <div class="container-fluid header bg-red row mx-0 px-0">
+        <div class="col-sm-6 mt-5 px-5">
+            <HeadingContent 
+                white_title
+                subTitle="RS Melinda Heart Center" 
+                title="Protect The Beating of Every Heart" 
+                paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.">
+                <a href="#" class="btn-readmore btn btn-primary rounded-pill">
+                    Read More
+                </a>
+            </HeadingContent>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>    
-    <div class="container-fluid gap-4 gap-md-0 col-sm-12 py-4 d-flex flex-column flex-md-row justify-content-md-around align-items-md-center">
-        <a href="#" data-bs-toggle="modal" data-bs-target="#auth" class="btn-pendaftaran btn btn-primary rounded-pill">
-            Pendaftaran <i class="bi bi-arrow-right"></i>
-        </a>
-        <div class="align-self-center d-flex align-items-center gap-4 text-white">
-            <i class="bi bi-telephone fs-3"></i>
-            <div class="d-flex flex-column">
-                <p class="fw-bold text-white m-0">Hotline & Emergency Case</p>
-                <p class="fw-light text-white m-0">08157100888</p>
-            </div>
+        <div class="col-sm-6 bg-image d-none d-md-block">
+            <p class="visually-hidden">p</p>
         </div>
-        <div class="align-self-center d-flex align-items-center gap-4 text-white">
-            <i class="bi bi-clock fs-3"></i>
-            <div class="d-flex flex-column">
-                <p class="fw-bold text-white m-0">Opening Hours</p>
-                <p class="fw-light text-white m-0">24 Hours</p>
+    </div>
+    <!-- input group desktop -->
+    <div class="px-5 d-flex flex-column input-contact d-none d-md-block">
+        <div class="input-group mb-3">
+            <select class="form-select" aria-label="Default select example" name="filterSpecialist" v-model="filterSpecialist">
+                <option value="Semua" selected>Semua</option>
+                <option v-for="doctor in doctors" :key="doctor.specialist" v-bind:value="doctor.specialist">
+                    {{doctor.specialist}}
+                </option>                
+            </select>
+            <input v-model="search" type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" placeholder="Cari disini...">
+            <button class="btn btn-outline-secondary py-3 btn-search-doctor" type="button" id="button-addon2">
+                Search Doctor dan Schedule
+            </button>        
+        </div>
+        <div class="gap-4 col-sm-12 py-4 d-flex flex-column flex-md-row">
+            <div class="align-self-center d-flex align-items-center gap-4">
+                <i class="bi bi-telephone fs-3 text-white"></i>
+                <div class="d-flex flex-column">
+                    <p class="fw-bold m-0 text-white">Hotline & Emergency Case</p>
+                    <p class="fw-light m-0 text-white">08157100888</p>
+                </div>
             </div>
-        </div>                  
-    </div>    
+            <div class="align-self-center d-flex align-items-center gap-4">
+                <i class="bi bi-clock fs-3 text-white"></i>
+                <div class="d-flex flex-column">
+                    <p class="fw-bold m-0 text-white">Opening Hours</p>
+                    <p class="fw-light m-0 text-white">24 Hours</p>
+                </div>
+            </div>                  
+        </div> 
+    </div>   
 </template>
 
 <style scoped>
-    .blog-carousel {
-        background-color: #1B4674;
+    .input-contact {
+        margin-top: -160px;
+    }
+    .btn-search-doctor {
+        background: #1B4674;
+        border: transparent;
+        color: #ffffff;
+    }
+    .btn-search-doctor:hover {
+        opacity: 0.5;
+        background: #1B4674;
+        border: transparent;
+        color: #ffffff;
     }
     .btn-readmore {
         background: #FCE8CE;
-        color: #575757;
+        color: #474747;
         border: transparent;
     }
     .btn-readmore:hover {
-        opacity: 0.5;
         background: #FCE8CE;
-        color: #575757;
+        color: #474747;
+        opacity: 0.5;
     }
-    .carousel-caption h5 {
-        font-weight: 600;
-        font-size: 14px;
-        /* identical to box height */
-        color: #75C6EF;
+    .header {
+        height: 80vh;
     }
-    .btn-pendaftaran {
-        background: #75C6EF;
-        border: transparent;       
+    .bg-image {
+        background-image: url('@/assets/images/hero-melinda-3.png') !important;
+        background-size: cover;
+        object-fit: cover;
     }
-    .btn-pendaftaran:hover {
-        background: #75C6EF;
-        border: transparent;
-        opacity: 0.5;       
+    .bg-red {
+        background: #CD4051;
     }
-    .container-fluid {
-        background-color: #1B4674;
+    @media (max-width: 575px) {
+    .header {
+        height: 40vh;
     }
+    }   
 </style>
